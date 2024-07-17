@@ -1,16 +1,16 @@
-const id = '1cfb17aa'
-const key = '97193b8d5c08b46f411c22a1161a615e'
+// const id = '1cfb17aa'
+// const key = '97193b8d5c08b46f411c22a1161a615e'
 
-const url = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=chicken+tortilla+cheese`
-console.log('changed')
+// const url = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=${ingredients}`
+// console.log('changed')
 
-fetch(url)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
-    })
+// fetch(url)
+//     .then(function (response) {
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data)
+//     })
 
 
 
@@ -39,25 +39,42 @@ fetch(url)
 //selecting the input element
 //
 
+//START OF DOC
+let ingredientsArr = []
+
+let x = JSON.parse(localStorage.getItem("ingredientsArr"))
+if (x !== null) {
+    ingredientsArr = x
+}
+
+const variableEl = document.getElementById('ingredientsInput')
+const submitButton = document.getElementById('submitButton')
+const formEl = document.getElementById('form')
 
 
 
-function handleFormSubmit(event){
+
+
+
+function handleFormSubmit(event) {
     event.preventDefault();
-    const ingredientsArr = JSON.parse(localStorage.getItem("ingredientsArr")) || [];
 
-    const variableEl = document.getElementById('#ingredientsInput').value;
+    const ingredientInput = variableEl.value
+    console.log(ingredientInput)
 
-    if (!ingredientsInput) {
+    variableEl.value = ''
+
+
+    if (!ingredientInput) {
         alert("Please enter an ingredient");
         return;
     }
-    const ingredient = {
-        ingredient: ingredientsInput,
-    }
 
-    ingredientsArr.push(ingredient);
+    ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
 
-    location.href= "./index.html";
 }
+
+
+formEl.addEventListener('submit', handleFormSubmit);
+submitButton.addEventListener('click', handleFormSubmit)
