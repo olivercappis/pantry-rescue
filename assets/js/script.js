@@ -37,3 +37,26 @@ fetch(url)
 // function: get input of ingredients
 //selecting the input element
 //
+
+
+
+
+function handleFormSubmit(event){
+    event.preventDefault();
+    const ingredientsArr = JSON.parse(localStorage.getItem("ingredientsArr")) || [];
+
+    const variableEl = document.getElementById('#ingredientsInput').value;
+
+    if (!ingredientsInput) {
+        alert("Please enter an ingredient");
+        return;
+    }
+    const ingredient = {
+        ingredient: ingredientsInput,
+    }
+
+    ingredientsArr.push(ingredient);
+    localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
+
+    location.href= "./index.html";
+}
