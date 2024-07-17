@@ -15,9 +15,9 @@ fetch(url)
 
 
 
-// get the input for ingredients
+// get the input for ingredients X
 
-//store ingredients to local storage
+//store ingredients to local storage X
 
 // create/place HTML of ingredients on the page (with delete button)
 
@@ -41,7 +41,7 @@ fetch(url)
 
 
 
-function handleFormSubmit(event){
+function handleSubmit(event){
     event.preventDefault();
     const ingredientsArr = JSON.parse(localStorage.getItem("ingredientsArr")) || [];
 
@@ -59,4 +59,6 @@ function handleFormSubmit(event){
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
 
     location.href= "./index.html";
+
+    variableEl.addEventListener("submit", handleSubmit);
 }
