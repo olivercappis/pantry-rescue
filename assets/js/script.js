@@ -10,3 +10,30 @@ fetch(url)
     .then(function (data) {
         console.log(data)
     })
+
+
+
+
+
+// get the input for ingredients
+
+//store ingredients to local storage
+
+// create/place HTML of ingredients on the page (with delete button)
+
+//add event listner to handle deletion of ingredients (removing them from local storage)
+
+// call the recipe api
+
+//display the recipe api results
+
+// add evvent listner to spotify prompt button
+
+//call spotify api
+
+//display the sportify api results
+
+
+// function: get input of ingredients
+//selecting the input element
+//
