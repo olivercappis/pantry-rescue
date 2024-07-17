@@ -16,9 +16,9 @@
 
 
 
-// get the input for ingredients
+// get the input for ingredients X
 
-//store ingredients to local storage
+//store ingredients to local storage X
 
 // create/place HTML of ingredients on the page (with delete button)
 
