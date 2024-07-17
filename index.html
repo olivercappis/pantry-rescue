@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Pantry Rescue</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 <body>
+  <style>
+    body {
+      background-image: url(./assets/images/bacground\ .jpg);
+      background-size: cover;
+    }
+    </style>
   <header>
     <h1>Pantry Rescue</h1>
   </header>
@@ -30,9 +37,9 @@
         </div>
       </article>
       <article>
-        <h3>Recipe Container</h3>
+        <h2>Recipe Container</h2>
         <div>
-          </p>
+          <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
           excepturi temporibus rem adipisci optio rerum facere blanditiis,
           ipsam iure esse accusantium eligendi aut est deserunt. In,
@@ -49,17 +56,18 @@
       <h2>Enter your food items!</h2>
       <form>
         <input type="text" placeholder="Ingredients" />
-        <button>Submit</button>
+        <button class="button is-primary is-rounded width">Make Magic!</button>
       </form>
     </aside>
   </main>
 
   <footer>
-    <span>Enjoy your cooking!</span>
+    <h2 id="footer-text">Enjoy your cooking!</h2>
   </footer>
 
 
   <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
