@@ -44,7 +44,7 @@ const submitButton = document.getElementById('submitButton')
 const formEl = document.getElementById('form')
 const callButton = $('#find-ingredients')
 const recipeContainer = $('.recipe-drawer')
-
+const pantryEl = $('#pantry');
 
 
 
@@ -53,8 +53,19 @@ const recipeContainer = $('.recipe-drawer')
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const ingredientInput = variableEl.value
-    console.log(ingredientInput)
+    const ingredientInput = variableEl.value;
+    const button = $('<button>');
+    const ingredientEl = $('<p>');
+
+    ingredientEl.text(ingredientInput);
+    button.text('Delete');
+
+    ingredientEl.append(button);
+
+    pantryEl.append(ingredientEl);
+
+
+
     variableEl.value = ''
 
 
@@ -65,10 +76,34 @@ function handleFormSubmit(event) {
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
+
+}
+
+function loadIngredient() {
+    const displayIngredient = JSON.parse(localStorage.getItem("ingredientsArr"));
+    if (displayIngredient !== null) {
+
+    
+    console.log(displayIngredient);
+
+    for (let i of displayIngredient) {
+        const button = $('<button>');
+        const ingredientEl = $('<p>');
+
+        ingredientEl.text(i);
+        button.text('Delete');
+
+        ingredientEl.append(button);
+
+        pantryEl.append(ingredientEl);
+    
+    }}
+
 }
 
 function call(event) {
     event.preventDefault()
+
     const currentIngredients = JSON.parse(localStorage.getItem('ingredientsArr'));
     const query = currentIngredients.join('+');
     console.log(query);
@@ -87,6 +122,7 @@ function call(event) {
             for (let x of recipes) {
                 const link = x.recipe.url
                 const title = x.recipe.label
+
                 const recipe_ingredients = x.recipe.ingredientLines
 
                 const anchorEl = $('<a>')
@@ -116,10 +152,11 @@ function call(event) {
 
         })
 
+
 }
 
 
-
-submitButton.addEventListener('click', handleFormSubmit)
-callButton.on('click', call)
+loadIngredient();
+submitButton.addEventListener('click', handleFormSubmit);
+callButton.on('click', call);
 
