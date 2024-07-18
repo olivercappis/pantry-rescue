@@ -1,7 +1,7 @@
 // const id = '1cfb17aa'
 // const key = '97193b8d5c08b46f411c22a1161a615e'
 
-// const url = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=${ingredients}`
+// const url = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=${query}`
 // console.log('changed')
 
 // fetch(url)
@@ -12,32 +12,32 @@
 //         console.log(data)
 //     })
 
+// GAMEPLAN
+// FUNCTION create url
+//      retreive local storage ingredients
+//      use string methods/loop to make const query =  `${ingredient}+${ingredient}...`
+//      url = url + query
+//      return url
+
+//FUNCTION call recipeapi(url)
+//      call it (use commented call from top)
+//      in second .then
+//          *BACK AT TOP* select recipe container element
+//  FOR LOOP
+//          create variables from data we want to display
+//          create html elements
+//          assign elements values from variables
+//          append elements into DOM
+
+// add ingredients to "pantry" *via local storage
+// add delete functionality *deletes dom element and from local storage
+
+// repeat call recipe api funcion structure for spotify api
 
 
 
 
-// get the input for ingredients X
 
-//store ingredients to local storage X
-
-// create/place HTML of ingredients on the page (with delete button)
-
-//add event listner to handle deletion of ingredients (removing them from local storage)
-
-// call the recipe api
-
-//display the recipe api results
-
-// add evvent listner to spotify prompt button
-
-//call spotify api
-
-//display the sportify api results
-
-
-// function: get input of ingredients
-//selecting the input element
-//
 
 //START OF DOC
 let ingredientsArr = []
