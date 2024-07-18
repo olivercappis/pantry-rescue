@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
+  min-height:100vh;
 }
 
 header {
@@ -40,6 +41,7 @@ main {
   flex: 1 1 0;
   max-width: 1200px;
   margin: 2% auto;
+  flex: wrap;
 }
 
 section {
@@ -89,6 +91,7 @@ p {
   font-style: normal;
   color: #ffffff;
   text-shadow: 2px 2px black;
+  width:450px;
 
 }
 
@@ -96,6 +99,7 @@ h2 {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
+  margin-bottom: 60px;
 }
 
 #footer-text {
@@ -108,6 +112,8 @@ h2 {
   color: #a8fffe;
   margin-left: 25%;
   margin-right: 25%;
+  text-align: center;
+  
 }
 
 .button.width {
@@ -115,3 +121,29 @@ h2 {
   justify-content: center;
 }
 
+.current-pantry {
+  margin-right: 25%;
+  flex-flow: column;
+  justify-content: center;
+  flex: none;
+  height: 10px;
+  margin-right: 5px;
+  align-self: center;
+  text-align: center;
+  margin-top: 10%;
+
+}
+input {
+  height: 45px;
+  width: 300px;
+}
+
+#find-ingredients {
+  width: 69%;
+  margin-bottom: 100%;
+}
+
+#recipe-drawer {
+  text-align: center;
+  justify-content: center;
+}
