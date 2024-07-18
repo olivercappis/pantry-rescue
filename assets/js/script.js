@@ -54,7 +54,9 @@ function handleFormSubmit(event) {
     event.preventDefault();
 
     const ingredientInput = variableEl.value
+
     console.log(ingredientInput)
+
     variableEl.value = ''
 
 
@@ -65,10 +67,12 @@ function handleFormSubmit(event) {
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
+
 }
 
 function call(event) {
     event.preventDefault()
+
     const currentIngredients = JSON.parse(localStorage.getItem('ingredientsArr'));
     const query = currentIngredients.join('+');
     console.log(query);
@@ -87,6 +91,7 @@ function call(event) {
             for (let x of recipes) {
                 const link = x.recipe.url
                 const title = x.recipe.label
+
                 const recipe_ingredients = x.recipe.ingredientLines
 
                 const anchorEl = $('<a>')
@@ -115,6 +120,7 @@ function call(event) {
 
 
         })
+
 
 }
 
