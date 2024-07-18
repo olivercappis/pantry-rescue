@@ -45,6 +45,7 @@ const formEl = document.getElementById('form')
 const callButton = $('#find-ingredients')
 const recipeContainer = $('.recipe-drawer')
 const pantryEl = $('#pantry');
+const pantryList = $('#pantry-list')
 
 
 
@@ -55,14 +56,15 @@ function handleFormSubmit(event) {
 
     const ingredientInput = variableEl.value;
     const button = $('<button>');
-    const ingredientEl = $('<p>');
+    const ingredientEl = $('<li>');
 
     ingredientEl.text(ingredientInput);
     button.text('Delete');
 
+
     ingredientEl.append(button);
 
-    pantryEl.append(ingredientEl);
+    pantryList.append(ingredientEl);
 
 
 
@@ -83,21 +85,22 @@ function loadIngredient() {
     const displayIngredient = JSON.parse(localStorage.getItem("ingredientsArr"));
     if (displayIngredient !== null) {
 
-    
-    console.log(displayIngredient);
 
-    for (let i of displayIngredient) {
-        const button = $('<button>');
-        const ingredientEl = $('<p>');
+        console.log(displayIngredient);
 
-        ingredientEl.text(i);
-        button.text('Delete');
+        for (let i of displayIngredient) {
+            const button = $('<button>');
+            const ingredientEl = $('<li>');
 
-        ingredientEl.append(button);
+            ingredientEl.text(i);
+            button.text('Delete');
 
-        pantryEl.append(ingredientEl);
-    
-    }}
+            ingredientEl.append(button);
+
+            pantryList.append(ingredientEl);
+
+        }
+    }
 
 }
 
