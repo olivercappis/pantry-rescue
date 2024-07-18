@@ -44,7 +44,7 @@ const submitButton = document.getElementById('submitButton')
 const formEl = document.getElementById('form')
 const callButton = $('#find-ingredients')
 const recipeContainer = $('.recipe-drawer')
-
+const pantryEl = $('#pantry');
 
 
 
@@ -53,9 +53,18 @@ const recipeContainer = $('.recipe-drawer')
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const ingredientInput = variableEl.value
+    const ingredientInput = variableEl.value;
+    const button = $('<button>');
+    const ingredientEl = $('<p>');
 
-    console.log(ingredientInput)
+    ingredientEl.text(ingredientInput);
+    button.text('Delete');
+
+    ingredientEl.append(button);
+
+    pantryEl.append(ingredientEl);
+
+
 
     variableEl.value = ''
 
@@ -67,6 +76,28 @@ function handleFormSubmit(event) {
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
+
+}
+
+function loadIngredient() {
+    const displayIngredient = JSON.parse(localStorage.getItem("ingredientsArr"));
+    if (displayIngredient !== null) {
+
+    
+    console.log(displayIngredient);
+
+    for (let i of displayIngredient) {
+        const button = $('<button>');
+        const ingredientEl = $('<p>');
+
+        ingredientEl.text(i);
+        button.text('Delete');
+
+        ingredientEl.append(button);
+
+        pantryEl.append(ingredientEl);
+    
+    }}
 
 }
 
@@ -125,7 +156,7 @@ function call(event) {
 }
 
 
-
-submitButton.addEventListener('click', handleFormSubmit)
-callButton.on('click', call)
+loadIngredient();
+submitButton.addEventListener('click', handleFormSubmit);
+callButton.on('click', call);
 
