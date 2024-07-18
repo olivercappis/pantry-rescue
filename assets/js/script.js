@@ -72,9 +72,28 @@ function handleFormSubmit(event) {
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
-
+    // createURL();
+    // console.log(URL);
+    const id = '1cfb17aa';
+    const key = '97193b8d5c08b46f411c22a1161a615e';
+    const currentIngredients = JSON.parse(localStorage.getItem('ingredientsArr'));
+    const query = currentIngredients.join('+');
+    console.log(query);
+    const URL = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=${query}`;
+    console.log(URL);
 }
+
+// function createURL() {
+//     const id = '1cfb17aa';
+//     const key = '97193b8d5c08b46f411c22a1161a615e';
+//     const currentIngredients = JSON.parse(localStorage.getItem('ingredientsArr'));
+//     const query = currentIngredients.join('+');
+//     console.log(query);
+//     const URL = `https://api.edamam.com/api/recipes/v2?type=any&app_id=${id}&app_key=${key}&q=${query}`;
+//     return URL;
+// }
 
 
 formEl.addEventListener('submit', handleFormSubmit);
 submitButton.addEventListener('click', handleFormSubmit)
+
