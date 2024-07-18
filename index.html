@@ -15,7 +15,7 @@
   <style>
     body {
       background-image: url(./assets/images/bacground\ .jpg);
-      background-size: cover;
+      background-size: cover; 
     }
     </style>
   <header>
@@ -37,18 +37,9 @@
         </div>
       </article>
       <article>
-        <h2>Recipe Container</h2>
-        <div>
-          <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-          excepturi temporibus rem adipisci optio rerum facere blanditiis,
-          ipsam iure esse accusantium eligendi aut est deserunt. In,
-          praesentium at. Inventore, consequatur!
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Consectetur aut nisi voluptate veniam delectus molestiae repudiandae
-          non recusandae, culpa id voluptas sed dolorum doloribus facere fugit
-          modi suscipit quo rerum!
-          </p>
+        <h2 id="recipe-drawer">Recipe Drawer</h2>
+        <div class="recipe-drawer">
+          
         </div>
       </article>
     </section>
@@ -57,12 +48,17 @@
       <form id="form">
         <input type="text" placeholder="Ingredients" id="ingredientsInput" />
         <button class="button is-primary is-rounded width" id="submitButton">Submit</button>
+        <section class="current-pantry">
+          <h2>Current Pantry</h2>
+          <button class="button is-primary is-rounded width" id="find-ingredients">Find Recipes with these Ingredients!</button>
+        </section>
       </form>
     </aside>
   </main>
+   </aside>
 
   <footer>
-    <h2 id="footer-text">Enjoy your cooking!</h2>
+    <h2 id="footer-text" style="height:10px">Enjoy your cooking!</h2>
   </footer>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
