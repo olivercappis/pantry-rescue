@@ -136,6 +136,7 @@ h2 {
   align-self: center;
   text-align: center;
   margin-top: 10%;
+  margin-left: ;
 }
 input {
   height: 45px;
@@ -145,7 +146,7 @@ input {
 #find-ingredients {
   width: 69%;
   margin-bottom: 15px;
-  margin-left: 17%;
+  margin-left: 5.5%;
 }
 
 #recipe-drawer {
@@ -172,10 +173,11 @@ h5 {
   margin-bottom: -.25%;
   justify-content: center;
   align-items: center;
+  margin-left: ;
 }
 
 #spotify-button {
-  margin-left: 240px;
+  margin-left: 15px;
   margin-top: 25px;
   margin-bottom: 50px;
 
@@ -184,7 +186,9 @@ h5 {
 
 #form {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
 }
 
 li {
@@ -216,15 +220,15 @@ li {
 }
 
 #ingredientsInput {
-  margin-left: 25%;
+  margin-left: 20%;
 }
 
 #submitButton {
-  margin-left: 39%;
+  margin-left: 33%;
 }
 
 #enter-items {
-  margin-left: 17%;
+  margin-left: 14%;
   margin-bottom: -.7%;
 }
 
