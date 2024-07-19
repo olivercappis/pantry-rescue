@@ -9,17 +9,6 @@
 
 // GAMEPLAN
 
-//FUNCTION call recipeapi(url)
-//      call it (use commented call from top)
-//      in second .then
-//          *BACK AT TOP* select recipe container element
-//  FOR LOOP
-//          create variables from data we want to display
-//          create html elements
-//          assign elements values from variables
-//          append elements into DOM
-
-// add ingredients to "pantry" *via local storage
 // add delete functionality *deletes dom element and from local storage
 
 // repeat call recipe api funcion structure for spotify api
@@ -139,17 +128,6 @@ function call(event) {
                 anchorEl.append(titleEl)
 
                 recipeContainer.append(anchorEl)
-                for (let y of recipe_ingredients) {
-                    const food = y
-                    console.log(food)
-                    const foodEl = $('<li>')
-                    foodEl.text(food)
-                    ingredientsListEl.append(foodEl)
-                }
-
-
-
-
             }
 
 
@@ -162,4 +140,21 @@ function call(event) {
 loadIngredient();
 submitButton.addEventListener('click', handleFormSubmit);
 callButton.on('click', call);
+
+
+
+
+const spotify = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+
+fetch(spotify)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data)
+
+        const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
+        console.log(search)
+    })
+
 
