@@ -101,7 +101,7 @@ function loadIngredient() {
             const ingredientEl = $('<li>');
 
             ingredientEl.text(i);
-            button.text('Delete');
+            button.attr('class', 'delete');
 
             ingredientEl.append(button);
 
