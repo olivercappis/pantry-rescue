@@ -55,6 +55,10 @@ const pantryList = $('#pantry-list')
 const youTubeButton = $('#spotify-button')
 const playlistsEl = $('#playlists')
 
+if (JSON.parse(localStorage.getItem('ingredientsArr')) === null) {
+    localStorage.setItem('ingredientsArr', JSON.stringify([]))
+}
+
 
 
 
@@ -62,11 +66,13 @@ const playlistsEl = $('#playlists')
 function handleFormSubmit(event) {
     event.preventDefault();
 
+    ingredientsArr = JSON.parse(localStorage.getItem('ingredientsArr'))
+
+
     const ingredientInput = variableEl.value;
     const button = $('<button>');
     const ingredientEl = $('<li>');
     if (!ingredientInput) {
-        // alert("Please enter an ingredient");
         return;
     }
 
@@ -86,6 +92,8 @@ function handleFormSubmit(event) {
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
+
+
 
 }
 
@@ -192,6 +200,14 @@ function deleteButton(event) {
     console.log($(event.target).parent().text())
 
     $(event.target).parent().remove()
+
+    const item = $(event.target).parent().text()
+    const index = storage.indexOf(item)
+
+    storage.splice(index, 1)
+
+    localStorage.setItem('ingredientsArr', JSON.stringify(storage))
+
 
 }
 
