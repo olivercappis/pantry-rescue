@@ -189,6 +189,7 @@ h5 {
 
 li {
   display: flex;
+  justify-content: center;
   font-family: "Edu AU VIC WA NT Hand", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -202,6 +203,7 @@ li {
   margin-bottom: 10%;
   margin-top: -35px;
 }
+
 
 .delete {
   display: flex;
