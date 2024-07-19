@@ -9,17 +9,6 @@
 
 // GAMEPLAN
 
-//FUNCTION call recipeapi(url)
-//      call it (use commented call from top)
-//      in second .then
-//          *BACK AT TOP* select recipe container element
-//  FOR LOOP
-//          create variables from data we want to display
-//          create html elements
-//          assign elements values from variables
-//          append elements into DOM
-
-// add ingredients to "pantry" *via local storage
 // add delete functionality *deletes dom element and from local storage
 
 // repeat call recipe api funcion structure for spotify api
@@ -45,6 +34,7 @@ const formEl = document.getElementById('form')
 const callButton = $('#find-ingredients')
 const recipeContainer = $('.recipe-drawer')
 const pantryEl = $('#pantry');
+const pantryList = $('#pantry-list')
 
 
 
@@ -55,14 +45,15 @@ function handleFormSubmit(event) {
 
     const ingredientInput = variableEl.value;
     const button = $('<button>');
-    const ingredientEl = $('<p>');
+    const ingredientEl = $('<li>');
 
     ingredientEl.text(ingredientInput);
     button.text('Delete');
 
+
     ingredientEl.append(button);
 
-    pantryEl.append(ingredientEl);
+    pantryList.append(ingredientEl);
 
 
 
@@ -83,21 +74,22 @@ function loadIngredient() {
     const displayIngredient = JSON.parse(localStorage.getItem("ingredientsArr"));
     if (displayIngredient !== null) {
 
-    
-    console.log(displayIngredient);
 
-    for (let i of displayIngredient) {
-        const button = $('<button>');
-        const ingredientEl = $('<p>');
+        console.log(displayIngredient);
 
-        ingredientEl.text(i);
-        button.text('Delete');
+        for (let i of displayIngredient) {
+            const button = $('<button>');
+            const ingredientEl = $('<li>');
 
-        ingredientEl.append(button);
+            ingredientEl.text(i);
+            button.text('Delete');
 
-        pantryEl.append(ingredientEl);
-    
-    }}
+            ingredientEl.append(button);
+
+            pantryList.append(ingredientEl);
+
+        }
+    }
 
 }
 
@@ -136,17 +128,6 @@ function call(event) {
                 anchorEl.append(titleEl)
 
                 recipeContainer.append(anchorEl)
-                for (let y of recipe_ingredients) {
-                    const food = y
-                    console.log(food)
-                    const foodEl = $('<li>')
-                    foodEl.text(food)
-                    ingredientsListEl.append(foodEl)
-                }
-
-
-
-
             }
 
 
@@ -159,4 +140,21 @@ function call(event) {
 loadIngredient();
 submitButton.addEventListener('click', handleFormSubmit);
 callButton.on('click', call);
+
+
+
+
+const spotify = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+
+fetch(spotify)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data)
+
+        const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
+        console.log(search)
+    })
+
 
