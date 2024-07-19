@@ -175,6 +175,8 @@ h5 {
 
 #spotify-button {
   margin-left: 240px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 
 
 }
@@ -195,7 +197,9 @@ li {
   width:450px;
   font-weight: 500;
   font-size: x-large;
-  margin-left: 25px;
+  margin-left: 50px;
+  margin-bottom: 10%;
+  margin-top: -35px;
 }
 
 .delete {
@@ -206,4 +210,17 @@ li {
   font-style: normal;
   color: #ff0000;
   margin-left: 10px;
+}
+
+#ingredientsInput {
+  margin-left: 25%;
+}
+
+#submitButton {
+  margin-left: 39%;
+}
+
+#enter-items {
+  margin-left: 17%;
+  margin-bottom: -.7%;
 }
