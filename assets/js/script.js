@@ -101,7 +101,7 @@ function loadIngredient() {
             const ingredientEl = $('<li>');
 
             ingredientEl.text(i);
-            button.text('Delete');
+            button.attr('class', 'delete')
 
             ingredientEl.append(button);
 
@@ -159,7 +159,7 @@ function call(event) {
 function callYouTube(event) {
     event.preventDefault()
 
-    const youTube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+    const youTube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCETR0VJKfe5n_tS84y64sP36AWuf4Jyec&q=cooking+music'
 
     fetch(youTube)
         .then(function (response) {
@@ -186,9 +186,18 @@ function callYouTube(event) {
 
 }
 
+function deleteButton(event) {
+    event.preventDefault()
+
+    event.target.parent.parent.remove()
+
+    console.log('called')
+}
+
 
 loadIngredient();
 submitButton.addEventListener('click', handleFormSubmit);
+pantryList.on('click', '.delete', deleteButton)
 callButton.on('click', call);
 youTubeButton.on('click', callYouTube)
 
@@ -200,17 +209,17 @@ youTubeButton.on('click', callYouTube)
 
 
 
-const spotify = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+// const spotify = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
 
-fetch(spotify)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
+// fetch(spotify)
+//     .then(function (response) {
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data)
 
-        const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
-        console.log(search)
-    })
+//         const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
+//         console.log(search)
+//     })
 
 
