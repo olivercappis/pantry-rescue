@@ -1,3 +1,15 @@
+// const youTube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+
+// fetch(youTube)
+//     .then(function (response) {
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data)
+
+//         const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
+//         console.log(search)
+//     })
 
 // fetch(url)
 //     .then(function (response) {
@@ -7,11 +19,16 @@
 //         console.log(data)
 //     })
 
-// GAMEPLAN
+// JS
 
 // add delete functionality *deletes dom element and from local storage
 
 // repeat call recipe api funcion structure for spotify api
+
+
+//FRONTEND
+//style ingredients
+//style links (once therye done)
 
 
 
@@ -35,6 +52,8 @@ const callButton = $('#find-ingredients')
 const recipeContainer = $('.recipe-drawer')
 const pantryEl = $('#pantry');
 const pantryList = $('#pantry-list')
+const youTubeButton = $('#spotify-button')
+const playlistsEl = $('#playlists')
 
 
 
@@ -137,9 +156,46 @@ function call(event) {
 }
 
 
+function callYouTube(event) {
+    event.preventDefault()
+
+    const youTube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
+
+    fetch(youTube)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            const songs = data.items
+            for (let song of songs) {
+                const search = `https://www.youtube.com/watch?v=${song.id.videoId}`
+                const video = $('<a>')
+
+                video.attr('href', search)
+                video.attr('target', '__blank')
+                video.text(search)
+
+                playlistsEl.append(video)
+
+
+            }
+
+
+
+        })
+
+}
+
+
 loadIngredient();
 submitButton.addEventListener('click', handleFormSubmit);
 callButton.on('click', call);
+youTubeButton.on('click', callYouTube)
+
+
+
+
+
 
 
 
