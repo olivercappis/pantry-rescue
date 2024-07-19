@@ -161,6 +161,7 @@ a {
   font-style: normal;
   color: #002aff;
   font-size: x-large;
+  margin-bottom: 30px;
 }
 
 h5 {
@@ -176,7 +177,7 @@ h5 {
 #spotify-button {
   margin-left: 240px;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 
 
 }
@@ -223,4 +224,18 @@ li {
 #enter-items {
   margin-left: 17%;
   margin-bottom: -.7%;
+}
+
+#playlists {
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #1b09e4;
+  width:450px;
+  font-weight: 500;
+  font-size: x-large;
+  margin-left: 50px;
+  margin-bottom: 10%;
+  margin-top: -35px;
 }
