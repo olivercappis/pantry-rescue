@@ -65,6 +65,10 @@ function handleFormSubmit(event) {
     const ingredientInput = variableEl.value;
     const button = $('<button>');
     const ingredientEl = $('<li>');
+    if (!ingredientInput) {
+        // alert("Please enter an ingredient");
+        return;
+    }
 
     ingredientEl.text(ingredientInput);
     button.attr('class', 'delete');
@@ -79,10 +83,6 @@ function handleFormSubmit(event) {
     variableEl.value = '';
 
 
-    if (!ingredientInput) {
-        alert("Please enter an ingredient");
-        return;
-    }
 
     ingredientsArr.push(ingredientInput);
     localStorage.setItem("ingredientsArr", JSON.stringify(ingredientsArr));
@@ -188,10 +188,11 @@ function callYouTube(event) {
 
 function deleteButton(event) {
     event.preventDefault()
+    const storage = JSON.parse(localStorage.getItem('ingredientsArr'))
+    console.log($(event.target).parent().text())
 
-    event.target.parent.parent.remove()
+    $(event.target).parent().remove()
 
-    console.log('called')
 }
 
 
