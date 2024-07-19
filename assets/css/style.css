@@ -92,6 +92,7 @@ p {
   color: #ffffff;
   text-shadow: 2px 2px black;
   width:450px;
+  font-weight: 500;
 
 }
 
@@ -100,6 +101,10 @@ h2 {
   font-weight: 400;
   font-style: normal;
   margin-bottom: 60px;
+}
+
+#welcome {
+  margin-bottom: -2%;
 }
 
 #footer-text {
