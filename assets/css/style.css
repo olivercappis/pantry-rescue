@@ -136,7 +136,6 @@ h2 {
   align-self: center;
   text-align: center;
   margin-top: 10%;
-  margin-bottom: -10%;
 }
 input {
   height: 45px;
@@ -145,7 +144,8 @@ input {
 
 #find-ingredients {
   width: 69%;
-  margin-bottom: 100%;
+  margin-bottom: 15px;
+  margin-left: 17%;
 }
 
 #recipe-drawer {
@@ -161,6 +161,7 @@ a {
   font-style: normal;
   color: #002aff;
   font-size: x-large;
+  margin-bottom: 30px;
 }
 
 h5 {
@@ -168,11 +169,73 @@ h5 {
 }
 
 #spotify-text {
-  margin-top: 300px;
   margin-bottom: -.25%;
+  justify-content: center;
+  align-items: center;
 }
 
 #spotify-button {
-  margin-left: 200px;
+  margin-left: 240px;
+  margin-top: 25px;
+  margin-bottom: 50px;
 
+
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  text-shadow: 2px 2px black;
+  width:450px;
+  font-weight: 500;
+  font-size: x-large;
+  margin-left: 50px;
+  margin-bottom: 10%;
+  margin-top: -35px;
+}
+
+.delete {
+  display: flex;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff0000;
+  margin-left: 10px;
+}
+
+#ingredientsInput {
+  margin-left: 25%;
+}
+
+#submitButton {
+  margin-left: 39%;
+}
+
+#enter-items {
+  margin-left: 17%;
+  margin-bottom: -.7%;
+}
+
+#playlists {
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #1b09e4;
+  width:450px;
+  font-weight: 500;
+  font-size: x-large;
+  margin-left: 50px;
+  margin-bottom: 10%;
+  margin-top: -35px;
 }

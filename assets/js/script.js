@@ -67,7 +67,7 @@ function handleFormSubmit(event) {
     const ingredientEl = $('<li>');
 
     ingredientEl.text(ingredientInput);
-    button.text('Delete');
+    button.attr('class', 'delete');
 
 
     ingredientEl.append(button);
@@ -76,7 +76,7 @@ function handleFormSubmit(event) {
 
 
 
-    variableEl.value = ''
+    variableEl.value = '';
 
 
     if (!ingredientInput) {
@@ -209,17 +209,5 @@ youTubeButton.on('click', callYouTube)
 
 
 
-// const spotify = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
-
-// fetch(spotify)
-//     .then(function (response) {
-//         return response.json()
-//     })
-//     .then(function (data) {
-//         console.log(data)
-
-//         const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
-//         console.log(search)
-//     })
 
 
