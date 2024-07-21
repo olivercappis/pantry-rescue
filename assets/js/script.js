@@ -1,41 +1,3 @@
-// const youTube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCE6xW9qBgDCvS-FrnptkxF23-N0oV9Mn0&q=cooking+music'
-
-// fetch(youTube)
-//     .then(function (response) {
-//         return response.json()
-//     })
-//     .then(function (data) {
-//         console.log(data)
-
-//         const search = `https://www.youtube.com/watch?v=${data.items[0].id.videoId}`
-//         console.log(search)
-//     })
-
-// fetch(url)
-//     .then(function (response) {
-//         return response.json()
-//     })
-//     .then(function (data) {
-//         console.log(data)
-//     })
-
-// JS
-
-// add delete functionality *deletes dom element and from local storage
-
-// repeat call recipe api funcion structure for spotify api
-
-
-//FRONTEND
-//style ingredients
-//style links (once therye done)
-
-
-
-
-
-
-//START OF DOC
 const id = '1cfb17aa';
 const key = '97193b8d5c08b46f411c22a1161a615e';
 let ingredientsArr = []
@@ -156,7 +118,7 @@ function call(event) {
 
                 recipeContainer.append(anchorEl)
             }
-
+            const line = $('<hr>')
 
         })
 
