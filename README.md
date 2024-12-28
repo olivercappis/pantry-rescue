@@ -15,7 +15,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-to use this project just visit the website at https://olivercappis.github.io/project-1/
+to use this project just visit the website at [https://olivercappis.github.io/project-1/](https://olivercappis.github.io/pantry-rescue/)
 
 ## Usage
 
